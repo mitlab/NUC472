@@ -20,6 +20,24 @@ extern "C"
 {
 #endif
 
+	
+typedef enum {
+	TEST = 0,					// Test
+	BASIC_IO,					// KTQAT
+	GWANGYANG_BS_FIRE,			// 소화전
+	GWANGYANG_BS_CONTROL,		// 제어반
+	POHANG_BS_SSFC,				// 소공간 소화 장치 (Small Space Fire Control)
+	POHANG_BS_CONTROL,			// 제어반 (소화설비 제어반)
+	POHANG_WSV					// 수봉변 (Water Seal Valbe)
+} systype_t;
+
+typedef enum {
+	TEST_SERVER = 0,
+	KT_QAT_SERVER,
+	POHANG_BS_SERVER,
+	GWANGYANG_BS_SERVER
+} servertype_t;
+
 #define UART0_BAUD_RATE		(115200)
 #define UART1_BAUD_RATE		(115200)
 #define UART2_BAUD_RATE		(115200)
@@ -28,6 +46,7 @@ extern "C"
 #define UART5_BAUD_RATE		(115200)
 
 #ifdef RTC_ENABLE
+
 struct nu_modinit_s {
     int modname;
     uint32_t clkidx;
@@ -43,6 +62,7 @@ struct nu_modinit_s {
 
 extern volatile unsigned long sysTickCount;
 extern volatile unsigned long sysTickCountOld;
+extern volatile systype_t SysType;
 
 extern void SysTick_Handler(void);
 

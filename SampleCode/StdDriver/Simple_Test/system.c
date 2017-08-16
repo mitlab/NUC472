@@ -2,7 +2,7 @@
 
 volatile unsigned long sysTickCount=0;
 volatile unsigned long sysTickCountOld=0;
-
+volatile systype_t SysType = BASIC_IO;
 
 #ifdef RTC_ENABLE
 
