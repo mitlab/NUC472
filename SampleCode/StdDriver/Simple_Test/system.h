@@ -38,6 +38,15 @@ typedef enum {
 	GWANGYANG_BS_SERVER
 } servertype_t;
 
+
+typedef struct {
+	uint8_t imei[15];		// 358833070042108
+	modemModelName[10];		// LE866A1-KK
+	boardName[10]			// wise-1a
+} sysType_t;
+
+
+
 #define UART0_BAUD_RATE		(115200)
 #define UART1_BAUD_RATE		(115200)
 #define UART2_BAUD_RATE		(115200)
@@ -46,14 +55,12 @@ typedef enum {
 #define UART5_BAUD_RATE		(115200)
 
 #ifdef RTC_ENABLE
-
 struct nu_modinit_s {
     int modname;
     uint32_t clkidx;
     uint32_t clksrc;
     uint32_t clkdiv;
     uint32_t rsetidx;
-    
     IRQn_Type irq_n;
     void *var;
 };
