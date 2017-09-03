@@ -15,39 +15,44 @@ typedef enum {
 	AT_CPIN
 } atCmd_t;
 
+
+
+#ifdef USE_TELIT_LTE_M
+
 // For Telit LTE Modem
-#define AT_CMD		"AT"
-#define AT_E		"ATE"			// Command Echo 0: disable, 1: enable(factory default)
+
+#define AT_CMD			"AT"
+#define AT_E			"ATE"			// Command Echo 0: disable, 1: enable(factory default)
 // AT&C - DCD , AT&D - DTR , AT&K - Flow Control , AT&S - DSR Control
-#define AT_CGMR		"AT+CGMR"		// Check the Software Versions
-#define AT_CGMM 	"AT+CGMM"		// Check the Module Identification
-#define AT_CPIN 	"AT+CPIN?"		// USIM Pin Code and PUK Code Configurations
-#define AT_QSS		"AT#QSS"		// USIM Status
-#define AT_QSS_R	"#QSS"			// response
-#define AT_CNUM 	"AT+CNUM"		// GET_PhoneNumber
-#define AT_CEREG	"AT+CEREG?"		// 
-#define AT_CEREG_R	"+CEREG:"		// CEREG Respons
-#define AT_CGDCONT 	"AT+CGDCONT"	// APN AT+CGDCONT=1,"IPV4V6","www.ktf.com"
-#define AT_CGDCONT_R "+CGPADDR:"	// respons 
-#define AT_CCLK 	"AT#CCLK?"		// GetTime_ME_RTC
-#define AT_GPIO		"AT#GPIO"		// GPIO
-#define AT_SIMINCFG	"AT#SIMINCFG"	// USIM_DETECT_Pin
+#define AT_CGMR			"AT+CGMR"		// Check the Software Versions
+#define AT_CGMM 		"AT+CGMM"		// Check the Module Identification
+#define AT_CPIN 		"AT+CPIN?"		// USIM Pin Code and PUK Code Configurations
+#define AT_QSS			"AT#QSS"		// USIM Status
+#define AT_QSS_R		"#QSS"			// response
+#define AT_CNUM 		"AT+CNUM"		// GET_PhoneNumber
+#define AT_CEREG		"AT+CEREG?"		// 
+#define AT_CEREG_R		"+CEREG:"		// CEREG Respons
+#define AT_CGDCONT 		"AT+CGDCONT"	// APN AT+CGDCONT=1,"IPV4V6","www.ktf.com"
+#define AT_CGDCONT_R 	"+CGPADDR:"		// respons 
+#define AT_CCLK 		"AT#CCLK?"		// GetTime_ME_RTC
+#define AT_GPIO			"AT#GPIO"		// GPIO
+#define AT_SIMINCFG		"AT#SIMINCFG"	// USIM_DETECT_Pin
 
-#define AT_CNUM		"AT+CNUM"		// Get_Phone_Number
-#define AT_SD		"AT#SD"			// Socket_Dial
-#define AT_SSEND	"AT#SSEND"		// TCP_Send
-#define AT_SCFGEXT	"AT#SCFGEXT"	// Set_Socket_Configuration
-#define AT_SGACT_Q	"AT#SGACT?"		// Get_TCP_IP_LTE_MODULE
-#define AT_CMEE		"AT+CMEE"		// Report_Mobile_Equipment_Error
-#define AT_CSCS		"AT+CSCS"		// Select_TE_Character_Set
-#define AT_IPR_Q	"AT+IPR=?"		// Main Serial Port Speed Configuration
-#define AT_IPR_R	"+IPR:"			// response +IPR: 38400 \r\n OK
-#define AT_W		"AT&W0"			// store the setting on profile 0
-#define AT_OK		"OK"			// response OK
-#define AT_P		"AT&P0"			// at power on use profile 0
-									// response OK
+#define AT_CNUM			"AT+CNUM"		// Get_Phone_Number
+#define AT_SD			"AT#SD"			// Socket_Dial
+#define AT_SSEND		"AT#SSEND"		// TCP_Send
+#define AT_SCFGEXT		"AT#SCFGEXT"	// Set_Socket_Configuration
+#define AT_SGACT_Q		"AT#SGACT?"		// Get_TCP_IP_LTE_MODULE
+#define AT_CMEE			"AT+CMEE"		// Report_Mobile_Equipment_Error
+#define AT_CSCS			"AT+CSCS"		// Select_TE_Character_Set
+#define AT_IPR_Q		"AT+IPR=?"		// Main Serial Port Speed Configuration
+#define AT_IPR_R		"+IPR:"			// response +IPR: 38400 \r\n OK
+#define AT_W			"AT&W0"			// store the setting on profile 0
+#define AT_P			"AT&P0"			// at power on use profile 0
+#define AT_OK			"OK"			// response OK
 
 // For Telit LTE Modem
+#endif
 
 #define PLUS		"+"
 #define EQAL		"="

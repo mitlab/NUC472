@@ -22,13 +22,13 @@ extern "C"
 
 	
 typedef enum {
-	TEST = 0,					// Test
-	BASIC_IO,					// KTQAT
-	GWANGYANG_BS_FIRE,			// ¼ÒÈ­Àü
-	GWANGYANG_BS_CONTROL,		// Á¦¾î¹Ý
-	POHANG_BS_SSFC,				// ¼Ò°ø°£ ¼ÒÈ­ ÀåÄ¡ (Small Space Fire Control)
-	POHANG_BS_CONTROL,			// Á¦¾î¹Ý (¼ÒÈ­¼³ºñ Á¦¾î¹Ý)
-	POHANG_WSV					// ¼öºÀº¯ (Water Seal Valbe)
+	TEST 					= 0,		// Test
+	BASIC_IO 				= '1',		// KTQAT
+	GWANGYANG_BS_FIRE 		= '2',		// ì†Œí™”ì „
+	GWANGYANG_BS_CONTROL 	= '3',		// ì œì–´ë°˜
+	POHANG_BS_CONTROL		= 'B',		// ì œì–´ë°˜ (ì†Œí™”ì„¤ë¹„ ì œì–´ë°˜)
+	POHANG_BS_SSFC			= 'C',		// ì†Œê³µê°„ ì†Œí™” ìž¥ì¹˜ (Small Space Fire Control)
+	POHANG_WSV				= 'D'		// ìˆ˜ë´‰ë³€ (Water Seal Valbe)
 } systype_t;
 
 typedef enum {
@@ -41,11 +41,14 @@ typedef enum {
 
 typedef struct {
 	uint8_t imei[15];		// 358833070042108
+	uint8_t cType;			// B,C,E
+	uint8_t cPhoneNumber[];	//
 	modemModelName[10];		// LE866A1-KK
-	boardName[10]			// wise-1a
+	boardName[10];			// wise-1a
 } sysType_t;
 
-
+/*****| Modem Type |**********************************************************/
+#define USE_TELIT_LTE_M
 
 #define UART0_BAUD_RATE		(115200)
 #define UART1_BAUD_RATE		(115200)

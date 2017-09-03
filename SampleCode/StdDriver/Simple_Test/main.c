@@ -193,6 +193,41 @@ void UART_Init(UART_T *uartport, uint32_t u32baudrate, uint32_t u32intsel, IRQn_
     NVIC_EnableIRQ(irqn);
 }
 
+#if 0
+void UART1_Init()
+{
+    /*---------------------------------------------------------------------------------------------------------*/
+    /* Init UART                                                                                               */
+    /*---------------------------------------------------------------------------------------------------------*/
+    UART_Open(UART1, UART_BAUD_RATE);
+    UART_ENABLE_INT(UART1, (UART_INTEN_RDAIEN_Msk | UART_INTEN_RXTOIEN_Msk));
+	NVIC_EnableIRQ(UART1_IRQn);
+}
+
+void UART2_Init()
+{
+    /*---------------------------------------------------------------------------------------------------------*/
+    /* Init UART                                                                                               */
+    /*---------------------------------------------------------------------------------------------------------*/
+    UART_Open(UART2, UART_BAUD_RATE);
+    UART_ENABLE_INT(UART2, (UART_INTEN_RDAIEN_Msk | UART_INTEN_RXTOIEN_Msk));
+    NVIC_EnableIRQ(UART2_IRQn);
+}
+
+void UART4_Init()
+{
+	UART_Open(UART4, UART_BAUD_RATE);
+	UART_ENABLE_INT(UART4, (UART_INTEN_RDAIEN_Msk | UART_INTEN_RXTOIEN_Msk));
+	NVIC_EnableIRQ(UART4_IRQn);
+}
+
+void UART5_Init()
+{
+	UART_Open(UART5, UART_BAUD_RATE);
+	UART_ENABLE_INT(UART5, (UART_INTEN_RDAIEN_Msk | UART_INTEN_RXTOIEN_Msk));
+	NVIC_EnableIRQ(UART5_IRQn);
+}
+#endif
 
 /*---------------------------------------------------------------------------------------------------------*/
 /* UART Test Sample                                                                                        */
