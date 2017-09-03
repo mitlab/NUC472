@@ -20,6 +20,33 @@ extern "C"
 {
 #endif
 
+	
+typedef enum {
+	TEST = 0,					// Test
+	BASIC_IO,					// KTQAT
+	GWANGYANG_BS_FIRE,			// 소화전
+	GWANGYANG_BS_CONTROL,		// 제어반
+	POHANG_BS_SSFC,				// 소공간 소화 장치 (Small Space Fire Control)
+	POHANG_BS_CONTROL,			// 제어반 (소화설비 제어반)
+	POHANG_WSV					// 수봉변 (Water Seal Valbe)
+} systype_t;
+
+typedef enum {
+	TEST_SERVER = 0,
+	KT_QAT_SERVER,
+	POHANG_BS_SERVER,
+	GWANGYANG_BS_SERVER
+} servertype_t;
+
+
+typedef struct {
+	uint8_t imei[15];		// 358833070042108
+	modemModelName[10];		// LE866A1-KK
+	boardName[10]			// wise-1a
+} sysType_t;
+
+
+
 #define UART0_BAUD_RATE		(115200)
 #define UART1_BAUD_RATE		(115200)
 #define UART2_BAUD_RATE		(115200)
@@ -34,7 +61,6 @@ struct nu_modinit_s {
     uint32_t clksrc;
     uint32_t clkdiv;
     uint32_t rsetidx;
-    
     IRQn_Type irq_n;
     void *var;
 };
@@ -43,6 +69,7 @@ struct nu_modinit_s {
 
 extern volatile unsigned long sysTickCount;
 extern volatile unsigned long sysTickCountOld;
+extern volatile systype_t SysType;
 
 extern void SysTick_Handler(void);
 
